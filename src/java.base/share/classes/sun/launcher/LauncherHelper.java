@@ -152,7 +152,7 @@ public final class LauncherHelper {
     @SuppressWarnings("fallthrough")
     static void showSettings(boolean printToStderr, String optionFlag,
             long initialHeapSize, long maxHeapSize, long stackSize) {
-
+Thread.dumpStack();
         initOutput(printToStderr);
         String opts[] = optionFlag.split(":");
         String optStr = (opts.length > 1 && opts[1] != null)

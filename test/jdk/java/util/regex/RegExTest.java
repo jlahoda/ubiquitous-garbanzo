@@ -22,8 +22,8 @@
  */
 
 /**
- * @test
  * @summary tests RegExp framework (use -Dseed=X to set PRNG seed)
+ * @test
  * @author Mike McCloskey
  * @bug 4481568 4482696 4495089 4504687 4527731 4599621 4631553 4619345
  * 4630911 4672616 4711773 4727935 4750573 4792284 4803197 4757029 4808962

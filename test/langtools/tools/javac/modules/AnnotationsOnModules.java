@@ -22,8 +22,8 @@
  */
 
 /*
- * @test
  * @bug 8159602 8170549 8171255 8171322
+ * @test
  * @summary Test annotations on module declaration.
  * @library /tools/lib
  * @modules jdk.compiler/com.sun.tools.javac.api
