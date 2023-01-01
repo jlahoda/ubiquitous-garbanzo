@@ -32,6 +32,7 @@ import java.lang.invoke.MethodType;
 import java.lang.module.ModuleDescriptor;
 import java.lang.reflect.Executable;
 import java.lang.reflect.Method;
+import java.lang.template.StringTemplate;
 import java.net.URI;
 import java.nio.charset.CharacterCodingException;
 import java.nio.charset.Charset;
@@ -45,6 +46,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.RejectedExecutionException;
 import java.util.stream.Stream;
 
+import jdk.internal.javac.PreviewFeature;
 import jdk.internal.misc.CarrierThreadLocal;
 import jdk.internal.module.ServicesCatalog;
 import jdk.internal.reflect.ConstantPool;
@@ -404,6 +406,24 @@ public interface JavaLangAccess {
      * Update lengthCoder for constant
      */
     long stringConcatMix(long lengthCoder, String constant);
+
+   /**
+    * Get the coder for the supplied character.
+    */
+   @PreviewFeature(feature=PreviewFeature.Feature.STRING_TEMPLATES)
+   long stringConcatCoder(char value);
+
+   /**
+    * Update lengthCoder for StringBuilder.
+    */
+   @PreviewFeature(feature=PreviewFeature.Feature.STRING_TEMPLATES)
+   long stringBuilderConcatMix(long lengthCoder, StringBuilder sb);
+
+    /**
+     * Prepend StringBuilder content.
+     */
+    @PreviewFeature(feature=PreviewFeature.Feature.STRING_TEMPLATES)
+   long stringBuilderConcatPrepend(long lengthCoder, byte[] buf, StringBuilder sb);
 
     /**
      * Join strings
